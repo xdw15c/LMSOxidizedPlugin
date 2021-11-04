@@ -1,0 +1,33 @@
+<!--// $Id$ //-->
+<TABLE class="lmsbox lms-ui-tab-container lms-ui-sortable" id="oxidized" data-label="{trans("Oxidized")}">
+	<COLGROUP>
+		<COL style="width: 100%;">
+	</COLGROUP>
+	<THEAD>
+	<TR class="hand lmsbox-titlebar" data-lmsbox-content="oxidizedpanel" onclick="showOrHide('oxidizedpanel')">
+		<TD class="fall">
+			<IMG src="img/traffic.gif" alt="">
+			<span class="bold">{trans("Oxidized:")}</span>
+		</TD>
+	</TR>
+	</THEAD>
+	<TBODY>
+	<TR id="oxidizedpanel" style="display:none;">
+		<TD class="fall">
+			<TABLE cellpadding="5" cellspacing="0" WIDTH="100%">
+				<TR>
+					<TD class="empty-table" style="width: 100%;" colspan="7">
+						<P>&nbsp;</P>
+						{foreach $netdevips as $netdevip}
+							<A HREF="{ConfigHelper::getConfig('oxidized.url')}/node/version?node_full={$netdevip.ip}" target="_new">{trans("Backups for: ")}{$netdevip.ip}</A><BR>
+						{foreachelse}
+							<P>{trans("No IP addresses on device.")}</P>
+						{/foreach}
+						<P>&nbsp;</P>
+					</TD>
+				</TR>
+			</TABLE>
+		</TD>
+	</TR>
+	</TBODY>
+</TABLE>
