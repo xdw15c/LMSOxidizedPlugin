@@ -25,5 +25,7 @@
  */
 
 $_LANG['Backups for: '] = 'Backupy dla: ';
+$_LANG['Oxidized Support'] = 'wsparcie dla Oxidized';
+
 
 ?>
